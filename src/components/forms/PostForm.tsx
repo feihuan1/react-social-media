@@ -1,6 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -20,6 +22,7 @@ const PostForm = ({ post }: PostFormProps) => {
   const { mutateAsync: createPost, isPending: isLoadingCreate } = useCreatePost()
   const { user } = useUserContext()
   const {toast} = useToast()
+  const navigate = useNavigate()
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof PostValidation>>({
@@ -40,10 +43,12 @@ const PostForm = ({ post }: PostFormProps) => {
     })
 
     if(!newPost) {
-      toast({
+      toast({ 
         title: 'please try again'
       })
     }
+
+    navigate('/')
   }
 
   return (
