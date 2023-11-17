@@ -22,9 +22,9 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar scrollbar-hidden ">
       <div className="flex flex-col gap-11">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link to="/" className="flex gap-3 items-center mb-12 self-center">
           <img
-            src="/assets/images/logo.svg"
+            src="/assets/images/logo.png"
             alt="logo"
             width={170}
             height={36}
@@ -65,7 +65,7 @@ const LeftSidebar = () => {
         </ul>
       </div>
 
-      <Button variant='ghost' className='shad-button_ghost' onClick={() => signOut()}>
+      <Button variant='ghost' className='shad-button_ghost mt-6' onClick={() => signOut()}>
           <img src='/assets/icons/logout.svg' alt='logout'  />
           <p className="small-medium lg:base-medium">Logout</p>
         </Button>

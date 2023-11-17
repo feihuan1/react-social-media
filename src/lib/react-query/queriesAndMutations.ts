@@ -84,7 +84,7 @@ export const useSearchPosts = (searchTerm: string) => {
 export const useGetRecentPosts = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_RECENT_POSTS],
-    queryFn: getRecentPosts,
+    queryFn: getRecentPosts, 
   });
 };
 
