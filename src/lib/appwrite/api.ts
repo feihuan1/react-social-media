@@ -329,6 +329,7 @@ export async function updatePost(post: IUpdatePost) {
   }
 }
 
+
 // ============================== DELETE POST
 export async function deletePost(postId?: string, imageId?: string) {
   if (!postId || !imageId) return;
