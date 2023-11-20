@@ -15,12 +15,9 @@ const Home = () => {
     {isPostLoading && !posts ? (
       <Loader /> 
     ) : (
-      <ul className="flex flex=col flex-1 gap-1 w-full">
+      <ul className="flex flex-col flex-1 gap-9 w-full">
         {posts?.documents.map((post: Models.Document) => (
-          // <li key={post.caption}>
-          //   {post.caption}
-          //   <img src={post.imageUrl} alt={`image of ${post.tags}`} />
-          // </li>
+
           <PostCard post={post} key={post.$createdAt} />
         ))}
       </ul>

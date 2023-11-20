@@ -8,6 +8,7 @@ appwrite storyge 2GB limit, please upload small img
 4. db schema on appwrite.com, account num at local machine in .env.local
 5. use zod with shadcn to validate form
 6. react query provides instant ui change before save database, (like icon)
+7. react-intersection-observer for infinite scroll
 
 ## if download zip
 1. run npm istall
