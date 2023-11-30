@@ -1,6 +1,10 @@
 # !!!important!!!
 appwrite storyge 2GB limit, please upload small img
 
+
+## live demo
+https://react-social-media-pink.vercel.app/
+
 # note
 1. use shacn for forms, buttons
 2. react-dropzone for image upload
