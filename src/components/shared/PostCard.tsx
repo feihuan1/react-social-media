@@ -23,7 +23,7 @@ const PostCard = ({post}: PostCardProps) => {
                         <img 
                             src={post?.creator?.imageUrl || '/assets/icons/useSignInAccount'} 
                             alt="creator"  
-                            className='rounded-full w-12 lg:h-12'
+                            className='rounded-full w-12 h-12'
                         />
                     </Link>
 
