@@ -31,8 +31,8 @@ import { useUserContext } from "@/context/AuthContext";
     );
   
     const handleDeletePost = () => {
-      // deletePost({ postId: id, imageId: post?.imageId });
-      // navigate(-1);
+      deletePost({ postId: id, imageId: post?.imageId });
+      navigate(-1);
     };
   
     return (
