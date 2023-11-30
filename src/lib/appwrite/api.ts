@@ -203,7 +203,8 @@ export async function deleteFile(fileId: string) {
 
     return { status: "ok" };
   } catch (error) {
-    console.log(error);
+    console.log("deleteFile error:", error);
+    throw error; // rethrow the error to handle it in the component
   }
 }
 
@@ -332,7 +333,9 @@ export async function updatePost(post: IUpdatePost) {
 
 // ============================== DELETE POST
 export async function deletePost(postId?: string, imageId?: string) {
-  if (!postId || !imageId) return;
+  if (!postId || !imageId) {
+    throw new Error("Invalid postId or imageId");
+  }
 
   try {
     const statusCode = await databases.deleteDocument(
@@ -341,13 +344,16 @@ export async function deletePost(postId?: string, imageId?: string) {
       postId
     );
 
-    if (!statusCode) throw Error;
+    if (!statusCode) {
+      throw new Error("Failed to delete document");
+    }
 
     await deleteFile(imageId);
 
     return { status: "Ok" };
   } catch (error) {
-    console.log(error);
+    console.log("deletePost error:", error);
+    throw error; // rethrow the error to handle it in the component
   }
 }
 
